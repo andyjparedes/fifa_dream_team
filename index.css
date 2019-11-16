@@ -6,8 +6,6 @@ body {
   font-size: 200%;
   text-align: center;
   margin-bottom: 10px;
-}
-#content {
 
 }
 #description {
@@ -37,15 +35,19 @@ body {
 #numplayers {
   text-align: center;
   margin-bottom: 10px;
+
 }
 #drop2 {
+
 
 }
 #createteams {
   text-align: center;
   margin-bottom: 10px;
 }
+
 #drop3 {
+
 
 }
 #roundtrans {
@@ -58,8 +60,11 @@ body {
 #version {
   text-align: center;
   margin-bottom: 10px;
+
 }
 #drop5 {
+
+
 
 }
 #example {
@@ -74,6 +79,7 @@ body {
 #next {
   text-align: center;
 }
+
 #draftpage {
 
 }
