@@ -320,8 +320,8 @@ class DraftPageMaster extends React.Component {
                     
                     <PlayerDatabase props={{rows:this.state.rows,handleClick:this.handleClick}}></PlayerDatabase>
                     <div>
-                    <Formation/>
-                    <PlayerTeam curTeam={this.state.curTeam} t1={this.state.t1} t2={this.state.t2} t3={this.state.t3} t4={this.state.t4} t5={this.state.t5} t6={this.state.t6}></PlayerTeam>
+                    <Formation curTeam={this.state.curTeam} t1={this.state.t1} t2={this.state.t2} t3={this.state.t3} t4={this.state.t4} t5={this.state.t5} t6={this.state.t6}/>
+                    <PlayerTeam curTeam={this.state.curTeam} t1={this.state.t1} t2={this.state.t2} t3={this.state.t3} t4={this.state.t4} t5={this.state.t5} t6={this.state.t6} newPlayer={this.state.draftedPlayer}></PlayerTeam>
                     </div>
                     
                 </div>

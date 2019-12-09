@@ -31,7 +31,8 @@ const columns = [
 	{ field: 'PACE', headerName: 'Pace',sortable:true,filter:"agNumberColumnFilter"   },
 	{ field: 'PASSING', headerName: 'Passing',sortable:true,filter:"agNumberColumnFilter"   },
 	{ field: 'DEFENDING', headerName: 'Defending',sortable:true,filter:"agNumberColumnFilter"   },
-	{ field: 'SHOOTING', headerName: 'Shooting',sortable:true,filter:"agNumberColumnFilter" } ];
+	{ field: 'SHOOTING', headerName: 'Shooting',sortable:true,filter:"agNumberColumnFilter" },
+	{ field: 'CLUB', headerName: 'Club',sortable:true,filter:"agTextColumnFilter",filterParams:{defaultOption:"notContains"}  }];
 
 /** This is the main class for displaying the player database for the Draft Page
  *  
@@ -58,6 +59,9 @@ const columns = [
 	 */
 	onGridReady = params => {
 		this.gridApi = params.api;
+		let yourFilter = this.gridApi.getFilterInstance("CLUB");
+		yourFilter.setModel({type:'notContains',filter:'icons'});
+		yourFilter.onFilterChanged();
 		this.gridColumnApi = params.columnApi;
 		params.api.sizeColumnsToFit();
 		
