@@ -19,6 +19,7 @@ function inputTeamNames() {
         //create the actual input boxes
         let x = document.createElement("INPUT");
         x.setAttribute("placeholder", "Team Name " + (i+1));
+        x.setAttribute("value", "Team Name " + (i+1));
         x.setAttribute("type", "text");
         x.setAttribute("padding", "12px 20px");
         x.setAttribute("id", "team" + (i+1));
@@ -39,9 +40,13 @@ function goToDraftPage() {
     // error checking
     if ((document.getElementById("drop1").value) == "null") {
         alert("Choose a number of teams for your draft!");
+        localStorage.clear();
+        return;
     }
     else if ((document.getElementById("drop2").value) == "null") {
         alert("Choose a number of players per team for your draft!");
+        localStorage.clear();
+        return;
     }
     else {
         localStorage.setItem("index_numteams", document.getElementById("drop1").value);
@@ -51,6 +56,8 @@ function goToDraftPage() {
             || ((document.getElementById("team" + (i+1)).value).charAt(document.getElementById("team" + (i+1)).value.length - 1) == " ")
             || ((document.getElementById("team" + (i+1)).value).indexOf("  ") != -1)) {
                 alert("Bad whitespacing in team name(s)");
+                localStorage.clear();
+                return;
             }
             else {
                 localStorage.setItem("index_team" + (i+1), document.getElementById("team" + (i+1)).value);

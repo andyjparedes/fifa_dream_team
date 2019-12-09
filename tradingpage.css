@@ -15,6 +15,7 @@ body, html {
 }
 #team1,#team2,#team3,#team4,#team5,#team6 { 
   text-align: center;
+  font-size: 150%;
 }
 #team1_block1, #team2_block1, #team3_block1, 
 #team4_block1, #team5_block1, #team6_block1 {
@@ -139,13 +140,13 @@ body, html {
 }
 #resultpage {
   background-color: rgba(0, 47, 201, 0.822); 
-  padding: 15px 40px;
+  padding: 18px 45px;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 5px 5px;
   cursor: pointer;
   position: fixed;

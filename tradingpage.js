@@ -1,6 +1,7 @@
 let numteams; // number of teams in this draft
 let buttonPressed = false; // used to change background color of buttons
 let currentPlayer; // player to be traded for another player
+let currentTeam; // team of player to be traded
 
 /*
  * load each team participating in the draft
@@ -52,13 +53,52 @@ function loadTeam(team, num) {
             // player to be traded out
             if (buttonPressed == false) {
                 currentPlayer = button.value;
+                currentTeam = button.id.substring(0,5);
                 button.style.background="white"; // to highlight player
                 button.style.color="black";
                 buttonPressed = true;
             }
             // player to be traded in
             else {
-                tradePlayerOption(currentPlayer, button.value);
+                if (currentTeam == button.id.substring(0,5)) {
+                    alert("Can not trade players from same team");
+                    // reset buttons back to default
+                    for (let j = 0; j < localStorage.getItem("index_numteams"); j++) {
+                        let x = document.getElementById("team" + (j+1));
+                        let y = x.getElementsByTagName("BUTTON");
+                        let color;
+                        switch(j+1) {
+                            case 1:
+                                color = "red";  
+                                break;
+                            case 2:
+                                color = "blue";  
+                                break;
+                            case 3:
+                                color = "green";  
+                                break;
+                            case 4:
+                                color = "yellow";  
+                                break;
+                            case 5:
+                                color = "purple";  
+                                break;
+                            case 6:
+                                color = "orange";  
+                                break;
+                            default:
+                                // nothing
+                        }
+                        for (let i = 0; i < y.length; i++) {
+                            y[i].style.background = color;
+                            y[i].style.color = "white";
+                        }
+                    }
+                    buttonPressed = false;
+                }
+                else {
+                    tradePlayerOption(currentPlayer, button.value);
+                }
             }
         });
     }

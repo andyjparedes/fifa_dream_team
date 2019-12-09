@@ -14,6 +14,7 @@ body, html {
   }
   #team1,#team2,#team3,#team4,#team5,#team6 { 
     text-align: center;
+    font-size: 150%;
   }
   #team1_block1, #team2_block1, #team3_block1, 
   #team4_block1, #team5_block1, #team6_block1 {
@@ -139,12 +140,13 @@ body, html {
     display: inline-block;
 }
 #instruct_title {
-    font-size: 125%;
+    font-size: 150%;
     margin-bottom: 10px;
     color: white;
 }
 #description {
     color: white;
+    font-size: 125%;
     margin-left: 20%;
     margin-right: 20%;
 }
