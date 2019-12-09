@@ -64,9 +64,8 @@ function goToDraftPage() {
             }
         }
         localStorage.setItem("index_numplayers", document.getElementById("drop2").value);
-        localStorage.setItem("index_createteams", document.getElementById("drop3").value);
-        localStorage.setItem("index_roundtrans", document.getElementById("drop4").value);
-        localStorage.setItem("index_version", document.getElementById("drop5").value);
+        localStorage.setItem("index_roundtrans", document.getElementById("drop3").value);
+        localStorage.setItem("index_version", document.getElementById("drop4").value);
     
         window.location = "DraftPageReact/build/index.html"; // go to Drafting Page
     }

@@ -3,6 +3,7 @@ let buttonPressed = false; // used to change background color of buttons
 let currentPlayer; // player to be traded for another player
 let currentTeam; // team of player to be traded
 
+
 /*
  * load each team participating in the draft
  * team: team to be loaded
@@ -48,47 +49,47 @@ function loadTeam(team, num) {
             document.getElementById("team" + num + "_block4").appendChild(button);
         }
 
-        // add a listener and react appropriately when clicked on
-        button.addEventListener("click", function(){
-            // player to be traded out
-            if (buttonPressed == false) {
-                currentPlayer = button.value;
-                currentTeam = button.id.substring(0,5);
-                button.style.background="white"; // to highlight player
-                button.style.color="black";
-                buttonPressed = true;
-            }
-            // player to be traded in
-            else {
-                if (currentTeam == button.id.substring(0,5)) {
-                    alert("Can not trade players from same team");
-                    // reset buttons back to default
-                    for (let j = 0; j < localStorage.getItem("index_numteams"); j++) {
-                        let x = document.getElementById("team" + (j+1));
-                        let y = x.getElementsByTagName("BUTTON");
-                        let color;
-                        switch(j+1) {
-                            case 1:
-                                color = "red";  
-                                break;
-                            case 2:
-                                color = "blue";  
-                                break;
-                            case 3:
-                                color = "green";  
-                                break;
-                            case 4:
-                                color = "yellow";  
-                                break;
-                            case 5:
-                                color = "purple";  
-                                break;
-                            case 6:
-                                color = "orange";  
-                                break;
-                            default:
-                                // nothing
-                        }
+            // add a listener and react appropriately when clicked on
+            button.addEventListener("click", function(){
+                // player to be traded out
+                if (buttonPressed == false) {
+                    currentPlayer = button.value;
+                    currentTeam = button.id.substring(0,5);
+                    button.style.background="white"; // to highlight player
+                    button.style.color="black";
+                    buttonPressed = true;
+                }
+                // player to be traded in
+                else {
+                    if (currentTeam == button.id.substring(0,5)) {
+                        alert("Can not trade players from same team");
+                        // reset buttons back to default
+                        for (let j = 0; j < localStorage.getItem("index_numteams"); j++) {
+                            let x = document.getElementById("team" + (j+1));
+                            let y = x.getElementsByTagName("BUTTON");
+                            let color;
+                            switch(j+1) {
+                                case 1:
+                                    color = "red";  
+                                    break;
+                                case 2:
+                                    color = "blue";  
+                                    break;
+                                case 3:
+                                    color = "green";  
+                                    break;
+                                case 4:
+                                    color = "yellow";  
+                                    break;
+                                case 5:
+                                    color = "purple";  
+                                    break;
+                                case 6:
+                                    color = "orange";  
+                                    break;
+                                default:
+                                    // nothing
+                            }
                         for (let i = 0; i < y.length; i++) {
                             y[i].style.background = color;
                             y[i].style.color = "white";
@@ -252,7 +253,6 @@ function goToResultPage() {
  */
 window.onload = function init() {
     this.document.getElementById("resultpage").addEventListener("click", goToResultPage);
-
     // load each team
     numteams = localStorage.getItem("index_numteams");
     for (let i = 1; i <= numteams; i++) {

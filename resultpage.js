@@ -45,7 +45,25 @@ function loadTeam(team, num) {
         if (i > 23 && i < 26) {
             document.getElementById("team" + num + "_block4").appendChild(button);
         } 
+        
+        button.addEventListener("click", function(){
+            alert("Name: " + team[i].NAME + "\n" +
+                  "Position: " + team[i].POSITION + "\n" +
+                  "League: " + team[i].LEAGUE + "\n" +
+                  "Club: " + team[i].CLUB + "\n" +
+                  "Rating: " + team[i].RATING + "\n" +
+                  "Pace: " + team[i].PACE + "\n" +
+                  "Shooting: " + team[i].SHOOTING + "\n" +
+                  "Passing: " + team[i].PASSING + "\n" +
+                  "Dribbling: " + team[i].DRIBBLING + "\n" +
+                  "Defending: " + team[i].DEFENDING + "\n" +
+                  "Physicality: " + team[i].PHYSICAL + "\n");
+        });
     }
+}
+
+function playerInfo() {
+
 }
  
 /* 
