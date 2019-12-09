@@ -32,6 +32,7 @@ const columns = [
 	{ field: 'PASSING', headerName: 'Passing',sortable:true,filter:"agNumberColumnFilter"   },
 	{ field: 'DEFENDING', headerName: 'Defending',sortable:true,filter:"agNumberColumnFilter"   },
 	{ field: 'SHOOTING', headerName: 'Shooting',sortable:true,filter:"agNumberColumnFilter" },
+	{ field: 'LEAGUE', headerName: 'League',sortable:false,filter:"agTextColumnFilter" },
 	{ field: 'CLUB', headerName: 'Club',sortable:true,filter:"agTextColumnFilter",filterParams:{defaultOption:"notContains"}  }];
 
 /** This is the main class for displaying the player database for the Draft Page
